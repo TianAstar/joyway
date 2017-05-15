@@ -1,0 +1,9 @@
+<view class="history-list">
+  <view class="history-item"  wx:for="{{consumptionList}}" wx:key="">
+    <view class="history-time">{{item.createTime}}</view>
+    <view class="history-site">{{item.venuesName}}</view>
+    <view class="history-cnt">
+    <text class="mr-5">运动时间：{{item.timeSpan}}</text><text>运动消费：{{item.amount}}元</text>
+    </view>
+  </view>
+</view>

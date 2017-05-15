@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/home/site/index",
+    "pages/user/index",
+    "pages/login/index",
+    "pages/user/balance/index",
+    "pages/home/detail/index",
+    "pages/user/help/index",
+    "pages/user/history/index",
+    "pages/qrcode/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fd621c",
+    "navigationBarTitleText": "九回云动",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fd621c"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "color": "#5c5c56",
+    "selectedColor": "#fd5a1f",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/images/tabbar/icon1.png",
+        "selectedIconPath": "/images/tabbar/icon-a1.png"
+      },
+      {
+        "pagePath": "pages/qrcode/index",
+        "text": "二维码",
+        "iconPath": "/images/tabbar/icon2.png",
+        "selectedIconPath": "/images/tabbar/icon-a2.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "/images/tabbar/icon3.png",
+        "selectedIconPath": "/images/tabbar/icon-a3.png"
+      }
+    ]
+  }
+}

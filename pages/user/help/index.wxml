@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="question-item">
+    <view class="question-item-title">如何进场</view>
+    <view class="question-item-cnt">
+      <image class="question-item-img" src="/images/help/help.jpg"></image>
+      <text>在智能闸机处出示二维码即可自由出入</text>
+    </view>
+  </view>
+</view>

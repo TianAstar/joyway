@@ -1,0 +1,15 @@
+/**app.wxss**/
+page{
+  height: 100%;
+}
+.btn-login{
+    display: inline-block;
+    border: #fff solid 1px;
+    border-radius: 5rpx;
+    padding: 15rpx 30rpx;
+    font-size: 14px;
+    color: #ffffff;
+}
+.h2{
+    font-size: 22px;
+}

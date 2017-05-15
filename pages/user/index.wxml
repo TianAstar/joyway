@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{userInfo}}">
+      <image class="userinfo-avatar" src="{{userInfo.avatar[0].file}}" background-size="cover"></image>
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    </block>
+    <block wx:else>
+      <view class="avatar-container" bindtap="login">
+        <view class="avatar-default">(ㄒoㄒ)</view>
+        <text class="btn-login">授权登录</text>
+      </view> 
+    </block>
+  </view>
+  <view class="list">
+   <block wx:if="{{userInfo}}">
+    <navigator class="list-item" url="/pages/user/balance/index" open-type="navigate">
+      <image class="list-item-img" src="/images/user/icon-yue.png"></image>
+      <text class="">我的钱包</text>
+      <text class="list-item-s">¥ {{userInfo.balance}}</text>
+      <image class="list-item-img-c" src="/images/common/icon-more.png"></image>
+    </navigator>
+    <navigator class="list-item" url="/pages/user/history/index" open-type="navigate">
+      <image class="list-item-img" src="/images/user/icon-order.png"></image>
+      <text>历史账单</text>
+      <image class="list-item-img-c" src="/images/common/icon-more.png"></image>
+    </navigator>
+    <navigator class="list-item" url="/pages/user/help/index" open-type="navigate">
+      <image class="list-item-img" src="/images/user/icon-q.png"></image>
+      <text>用户指南</text>
+      <image class="list-item-img-c" src="/images/common/icon-more.png"></image>
+    </navigator>
+    </block>
+  </view>
+</view>

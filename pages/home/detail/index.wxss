@@ -1,0 +1,27 @@
+/* pages/home/detail/index.wxss */
+.slide-image{
+    width: 100%;
+    height: 150px;
+}
+.detail-box{
+    padding: 30rpx;
+}
+.detail-title{
+    padding-bottom: 15rpx;
+}
+.detail-p{
+    padding-bottom: 15rpx;
+    font-size: 12px;
+    border-bottom: #eeeeee solid 1px;
+    color: #bfbfbf;
+    line-height: 20px;
+}
+.icon-site{
+    width: 25rpx;
+    height:25rpx;
+}
+.detail-site{
+    padding-top: 15rpx;
+    font-size: 12px;
+    color: #7d7d7d;
+}

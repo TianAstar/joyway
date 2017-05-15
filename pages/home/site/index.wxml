@@ -1,0 +1,11 @@
+<view class="site-list" wx:for="{{venues}}" wx:key="">
+  <navigator  class="site-card" url="/pages/home/detail/index?id={{item.id}}">
+    <image class="site-img" src="{{item.banner[0].file}}"></image>
+    <view class="site-cnt">
+      <view class="site-title">{{item.name}}</view>
+      <view class="site-p">{{item.notice}}</view>
+      <view class="site-info">
+        <image class="site-icon" src="/images/common/icon-p.png"></image>人气值：{{item.visitorCount}}</view>
+    </view>
+  </navigator>
+</view>

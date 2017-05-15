@@ -1,0 +1,22 @@
+<view class="money-box">
+  <view class="balance-box">
+    <text class="balance-box-t">¥ {{amount}}
+      <text class="balance-box-st">可用余额</text>
+    </text>
+  </view>
+  <view class="recharge-box">
+    <view class="recharge-title">充值金额</view>
+    <view class="recharge-list">
+      <view class="recharge-item {{active[index]==true?'recharge-item-active':''}}" wx:for="{{money}}" wx:key="moneyid" data-money="{{item}}" data-index="{{index}}" bindtap="toselect">¥ {{item}}</view>
+    </view>
+    <view class="recharge-info">
+      <view>点击去充值，即表示已阅读并同意
+        <navigator class="inline" url="url">《充值协议》</navigator>
+      </view>
+      <view>九回不会以任何形式要求您输入银行账户和密码</view>
+    </view>
+    <view class="recharge-btn-g">
+      <button class="recharge-btn" size="{{primarySize}}" loading="{{loading}}" disabled="{{disabled}}" bindtap="topay">去充值</button>
+    </view>
+  </view>
+</view>

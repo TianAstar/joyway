@@ -1,0 +1,20 @@
+<view class="qrcode-container">
+  <view class="qrcode-box">
+    <block wx:if="{{userInfo}}">
+      <block wx:if="{{userInfo.balance>0}}">
+        <image class="qrcode" src="{{src}}" />
+        <view class="qrcode-title">扫一扫,即可自由出入</view>
+      </block>
+      <block wx:else>
+        <view class="qrcode-title h2">(ㄒoㄒ)</view>
+        <view class="qrcode-title">您的余额不足，请先充值</view>
+        <navigator url="/pages/user/balance/index" class="btn-login">去充值</navigator>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="qrcode-title h2">(ㄒoㄒ)</view>
+      <view class="qrcode-title">请登录后查看二维码</view>
+      <view class="btn-login"  bindtap="login">授权登录</view>
+    </block>
+  </view>
+</view>

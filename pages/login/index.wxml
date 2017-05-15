@@ -1,0 +1,18 @@
+
+<!--pages/login/index.wxml-->
+<view class="classname">
+  <view class="form-title">绑定手机号</view>
+  <view class="form-cl b-line">
+    <image class="form-icon" src="/images/common/icon-phone.png"></image>
+    <input class="form-input" bindinput="bindKeyInput" placeholder="请输入您的的手机号" auto-focus type="number" maxlength="11"/>
+    <view class="form-code {{codeflag?'form-code-active':''}}" bindtap="getCode">{{codeInfo}}</view>
+  </view>
+  <view class="form-cl">
+    <image class="form-icon" src="/images/common/icon-ma.png"></image>
+    <input class="form-input" bindinput="bindCodeInput" placeholder="请输入收到的验证码" type="number" />
+  </view>
+  <view class="form-info">如果您是第一次绑定手机号。我们将为您创建九回账户</view>
+  <view class="form-btn-w">
+    <button class="form-btn {{flag?'form-btn-active':''}}" bindtap="connect">绑定</button>
+  </view>
+</view>

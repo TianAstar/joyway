@@ -1,0 +1,20 @@
+<view class="">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="#fff" indicator-active-color="#fd621c" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{venue.banner}}" wx:key="">
+      <swiper-item>
+        <image src="{{item.file}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="detail-box">
+  <view class="detail-title">
+      {{venue.name}}
+  </view>
+  <view class="detail-p">
+      <view wx:for="{{venue.amountRuleList}}" wx:key="">{{item.startTimeOfDay}}-{{item.endTimeOfDay}}：{{item.amountPerHour}}元/小时</view>
+  </view>
+   <view class="detail-site">
+  <image class="icon-site" src="/images/common/icon-site.png"></image> {{venue.address}}
+  </view>
+  </view>
+</view>

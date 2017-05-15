@@ -1,0 +1,57 @@
+/* pages/login/index.wxss */
+page{
+    background: #f4f4f4
+}
+.form-title{
+    text-align: center;
+    padding: 60rpx 0;
+    font-size: 16px;
+    font-weight: bold
+}
+.form-cl{
+    background: #fff;
+    padding:25rpx 20rpx;
+    display: flex;
+    position: relative;
+}
+.b-line{
+    border-bottom: #e4e4e4 solid 1px;
+}
+.form-input{
+    font-size: 14px;
+}
+.form-info{
+    text-align: center;
+    font-size: 12px;
+    padding: 40rpx 0;
+    color: #999999
+ }
+ .form-btn-w{
+     padding: 0 20rpx;
+ }
+ .form-icon{
+     width: 40rpx;
+     height: 40rpx;
+     margin-right: 10rpx;
+     margin-top: 2px;
+ }
+ .form-code{
+     position: absolute;
+     top: 50%;
+     right: 15rpx;
+     font-size: 13px;
+     background: #c4c4c4;
+     color: #fff;
+     width: 100px;
+     text-align: center;
+     height: 30px;
+     line-height: 30px;
+     margin-top: -15px;
+ }
+ .form-code-active{
+     background: #fd621c
+ }
+ .form-btn-active{
+     background: #fd621c;
+     color: #fff
+ }
