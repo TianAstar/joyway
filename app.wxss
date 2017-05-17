@@ -13,14 +13,3 @@ page{
 .h2{
     font-size: 22px;
 }
-.error{
-  text-align: center;
-  color: #666;
-  padding-top: 400rpx;
-  font-size: 15px;
-}
-.error-em{
-  text-indent: -1em;
-  font-size: 18px;
-  margin-bottom: 20rpx;
-}

@@ -1,107 +1,124 @@
-var app = getApp()
 Page({
-  data: {
-    markers: [],
-    longitude: null,
-    latitude: null
-  },
-  onLoad: function (options) {
-    // 生命周期函数--监听页面加载
-    var that = this;
-    that.venueslist()
-  },
-  getLoaction: function () {
-    var that = this;
-    wx.getLocation({
-      type: 'gcj02',
-      success: function (res) {
-        // var latitude = res.latitude;
-        // var longitude = res.longitude;
-        // var speed = res.speed;
-        // var accuracy = res.accuracy;
-        var tmpvenue = that.data.markers
-        var marker = {
-          id: 1,
-          longitude: res.longitude,
-          latitude: res.latitude,
-          iconPath: "/images/map/site.png",
-          title: "我的位置",
-          width: 30,
-          height: 30,
-        }
-        tmpvenue.push(marker)
-        that.setData({
-          markers: tmpvenue,
-          longitude: res.longitude,
-          latitude: res.latitude
+    data: {
+        markers: null,
+        longitude: null,
+        latitude: null
+    },
+    onLoad: function (options) {
+        // 生命周期函数--监听页面加载
+        var that = this;
+        wx.getLocation({
+            type: 'gcj02',
+            success: function (res) {
+                // var latitude = res.latitude;
+                // var longitude = res.longitude;
+                // var speed = res.speed;
+                // var accuracy = res.accuracy;
+                that.setData({
+                    markers: [{
+                        id:1,
+                        longitude: res.longitude,
+                        latitude: res.latitude,
+                        iconPath: "/images/map/site.png",
+                        title:"我的位置",
+                        width: 30,
+                        height: 30,
+                    },
+                    {
+                        longitude: 121.442237,
+                        latitude: 31.316484,
+                        iconPath: "/images/map/icon.png",
+                        title:"东茭泾绿地篮球场",
+                        width: 36,
+                        height: 41,
+                    },
+                    {
+                        longitude: 121.4675611925,
+                        latitude: 31.2474547809,
+                        iconPath: "/images/map/icon.png",
+                        title:"交通公园篮球场",
+                        width: 36,
+                        height: 41,
+                    }
+                    ],
+                    longitude:res.longitude,
+                    latitude: res.latitude
+                })
+            }
+        });
+    },
+    getLoaction:function(){
+        var that = this;
+        wx.openSetting({
+          success: (res) => {
+            res.authSetting = {
+              "scope.userLocation": true
+            },
+             wx.getLocation({
+            type: 'gcj02',
+            success: function (res) {
+                // var latitude = res.latitude;
+                // var longitude = res.longitude;
+                // var speed = res.speed;
+                // var accuracy = res.accuracy;
+                that.setData({
+                    markers: [{
+                        id:1,
+                        latitude: res.latitude,
+                        longitude: res.longitude,
+                        iconPath: "/images/map/site.png",
+                        title:"我的位置",
+                        width: 19,
+                        height: 32.5,
+                    },
+                    {
+                        latitude: res.latitude+0.001,
+                        longitude: res.longitude+0.001,
+                        iconPath: "/images/map/icon.png",
+                        width: 36,
+                        height: 41,
+                    },
+                    {
+                        latitude: res.latitude+0.002,
+                        longitude: res.longitude+0.002,
+                        iconPath: "/images/map/icon.png",
+                        width: 36,
+                        height: 41,
+                    }
+                    ],
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                })
+            }
+        });
+          }
         })
-      }
-    });
-  },
-  venueslist: function () {
-    var that = this;
-    wx.request({
-      url: app.globalData.api.venueslist,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'GET',
-      success: function (res) {
-        var tmp = res.data.venuesList
-        var markers = []
-        for (var i = 0; i < tmp.length; i++) {
-          markers[i] = {}
-          markers[i].longitude = tmp[i].xaxis
-          markers[i].latitude = tmp[i].yaxis
-          markers[i].title = tmp[i].name
-          markers[i].iconPath = "/images/map/icon.png"
-          markers[i].width = 36
-          markers[i].height = 41
+    },
+    onReady: function () {
+        // 生命周期函数--监听页面初次渲染完成
+    },
+    onShow: function () {
+        // 生命周期函数--监听页面显示
+    },
+    onHide: function () {
+        // 生命周期函数--监听页面隐藏
+    },
+    onUnload: function () {
+        // 生命周期函数--监听页面卸载
+    },
+    onPullDownRefresh: function () {
+        // 页面相关事件处理函数--监听用户下拉动作
+        String7
+    },
+    onReachBottom: function () {
+        // 页面上拉触底事件的处理函数
+    },
+    onShareAppMessage: function () {
+        // 用户点击右上角分享
+        return {
+            title: 'title', // 分享标题
+            desc: 'desc', // 分享描述
+            path: 'path' // 分享路径
         }
-        that.setData({
-          markers: markers
-        })
-      }
-    })
-  },
-  userSetting: function () {
-    var that = this;
-    wx.openSetting({
-      success: (res) => {
-        res.authSetting = {
-          "scope.userLocation": true
-        },
-          that.getLoaction()
-      }
-    })
-  },
-  onReady: function () {
-    // 生命周期函数--监听页面初次渲染完成
-    var that=this
-    that.getLoaction()
-  },
-  onShow: function () {
-    var that = this
-    that.getLoaction()
-  },
-  onHide: function () {
-    // 生命周期函数--监听页面隐藏
-  },
-  onUnload: function () {
-    // 生命周期函数--监听页面卸载
-  },
-  onPullDownRefresh: function () {
-    // 页面相关事件处理函数--监听用户下拉动作
-  },
-  onReachBottom: function () {
-    // 页面上拉触底事件的处理函数
-  },
-  onShareAppMessage: function () {
-    // 用户点击右上角分享
-    return {
-      title: 'title', // 分享标题
-      desc: 'desc', // 分享描述
-      path: 'path' // 分享路径
     }
-  }
 })

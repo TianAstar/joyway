@@ -1,26 +1,22 @@
 /* pages/user/help/index.wxss */
-
-.container {
-  padding: 30rpx;
+.container{
+    padding: 30rpx;
 }
-
-.question-item {
-  padding-bottom: 20rpx;
+.question-item{
+    border-bottom: #666 solid 1px;
+    padding-bottom: 20rpx;
 }
-
-.question-item-title {
-  text-align: center;
-  margin-bottom: 10px;
+.question-item-title{
+    text-align: center;
+    margin-bottom: 10px;
 }
-
-.question-item-cnt {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
+.question-item-cnt{
+    text-align: center;
+    font-size: 14px;
+    color: #666;
 }
-
-.question-item-img {
-  width: 359rpx;
-  height: 1116rpx;
-  margin-bottom: 10rpx;
+.question-item-img{
+    width: 690rpx;
+    height: 400rpx;
+    margin-bottom: 10rpx;
 }
