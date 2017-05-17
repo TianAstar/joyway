@@ -1,5 +1,5 @@
 <view class="map-container">
-  <view class="map-info" wx:if="{{!longitude}}" bindtap="getLoaction">获取地理位置</view>
+  <view class="map-info" wx:if="{{!longitude}}" bindtap="userSetting">获取地理位置</view>
   <navigator class="map-nav" url="/pages/home/site/index">
     <image class="map-icon" src="/images/common/icon-cg.png"></image>查看您附近的场馆
     <image class="map-arrow" src="/images/common/icon-more.png"></image>

@@ -7,7 +7,7 @@ Page({
     loading: false,
     money: [0.01, 10, 100, 200, 300, 500],
     active: [true, false, false, false, false, false],
-    amount: null,
+    amount: 0,
     pay: 0.01
   },
   onLoad: function (options) {
@@ -25,6 +25,7 @@ Page({
     // 生命周期函数--监听页面显示
     var that = this
     //调用应用实例的方法获取全局数据
+    app.upDateUserInfo()
     that.setData({
       amount: app.globalData.userInfo.balance
     })

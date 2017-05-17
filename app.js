@@ -9,8 +9,7 @@ App({
       if (userToken) {
         wx.checkSession({
           success: function () {
-            var userContext = wx.getStorageSync('userContext')
-            that.globalData.userInfo = userContext
+            that.globalData.userInfo = wx.getStorageSync('userContext')
             that.globalData.userInfo.avatar = JSON.parse(that.globalData.userInfo.avatar)
             //session 未过期，并且在本生命周期一直有效
           },
@@ -118,6 +117,14 @@ App({
               },
               method: 'POST',
               success: function (res) {
+                wx.setStorage({
+                  key: 'userToken',
+                  data: res.data.token
+                });
+                wx.setStorage({
+                  key: 'userContext',
+                  data: res.data.userContext
+                });
                 that.globalData.userInfo = res.data.userContext
                 that.globalData.api.qrcode = domain + "/consumption/doorQrCode?client=WechatClient&token=" + res.data.token
                 that.globalData.userInfo.avatar = JSON.parse(that.globalData.userInfo.avatar)

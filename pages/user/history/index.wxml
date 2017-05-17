@@ -1,4 +1,4 @@
-<view class="history-list">
+<view class="history-list" wx:if="{{consumptionList}}">
   <view class="history-item"  wx:for="{{consumptionList}}" wx:key="">
     <view class="history-time">{{item.createTime}}</view>
     <view class="history-site">{{item.venuesName}}</view>
@@ -6,4 +6,8 @@
     <text class="mr-5">运动时间：{{item.timeSpan}}</text><text>运动消费：{{item.amount}}元</text>
     </view>
   </view>
+</view>
+<view class="error" wx:else>
+<view class="error-em">ㄟ( ▔, ▔ )ㄏ</view>
+<view class="">您还未有消费记录哦！</view>
 </view>

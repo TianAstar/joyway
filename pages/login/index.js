@@ -112,7 +112,7 @@ Page({
             wx.showToast({
               title: '绑定成功',
             })
-            app.upDateUserInfo()
+            app.login()
             wx.redirectTo({
               url: '/pages/user/balance/index',
             })

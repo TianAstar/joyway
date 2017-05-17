@@ -24,9 +24,11 @@ Page({
           tmp[i].timeSpan = that.timeFormat(tmp[i].timeSpan)
           tmp[i].createTime=that.formatTime(tmp[i].createTime)
         }
-        that.setData({
-          consumptionList: tmp,
-        })
+        if (tmp[0]){
+          that.setData({
+            consumptionList: tmp,
+          })
+        }
       }
     })
   },
